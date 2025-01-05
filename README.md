@@ -1,59 +1,61 @@
-# TodoList
+# To-Do List Application
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.0.6.
+## Description
 
-## Development server
+This is a simple To-Do List application built with Angular. The app allows you to add, edit, and delete tasks. The tasks are persisted in `localStorage`, so even after refreshing the page, your tasks will remain.
 
-To start a local development server, run:
+## Features
 
+- Add new tasks to your to-do list.
+- Edit and update existing tasks.
+- Delete tasks from the list.
+- All tasks are saved in the browser's `localStorage`, ensuring persistence after page reload.
+
+## Technologies Used
+
+- **Angular**: A platform for building client-side applications.
+- **localStorage**: A simple way to store data in the browser.
+
+## Installation
+
+To get started with the project locally, follow these steps:
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/your-username/todo-list-app.git
+ ```
+2.Navigate to the project directory:
+
+```bash
+cd todo-list-app
+ ```
+3.Install dependencies:
+```bash
+npm install
+ ```
+4.Run the development server:
 ```bash
 ng serve
-```
-
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
-
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
+ ```
+5.Open your browser and go to:
 ```bash
-ng generate component component-name
-```
+http://localhost:4200
+ ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+## How It Works
 
-```bash
-ng generate --help
-```
+ 
 
-## Building
+**Add Task**: You can add a new task by typing it in the input field and clicking the "Add" button.
 
-To build the project run:
+**Edit Task**: Click the "Edit" button next to a task to modify its content. After editing, click "Save" to update it.
 
-```bash
-ng build
-```
+**Delete Task**: Click the "Delete" button next to a task to remove it from the list.
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+The tasks are stored in the browser's localStorage, so they persist even after refreshing the page.
 
-## Running unit tests
+## Contributing
+If you want to contribute to this project, feel free to fork the repository and submit pull requests. We welcome improvements and bug fixes!
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
 
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
