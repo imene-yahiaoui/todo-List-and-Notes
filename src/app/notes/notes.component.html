@@ -1,1 +1,54 @@
-<p>notes works!</p>
+<a routerLink="/"
+    class="block bg-green-600 text-white text-center font-medium py-3 rounded-lg hover:bg-green-700 transition duration-200 mb-6 mx-auto w-max">
+    Retour
+</a>
+<div class="max-w-lg mx-auto p-4 border border-gray-300 rounded-lg shadow-lg bg-gray-50">
+    <h2 class="text-2xl font-bold text-center text-gray-800 mb-4">Ma Liste de Notes</h2>
+
+    <!-- Champ d'ajout de nouvelle note -->
+    <div class="mb-4 flex space-x-2">
+        <input [(ngModel)]="newNote" placeholder="Nouvelle note..."
+            class="flex-1 p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" />
+        <button (click)="addNote()"
+            class="p-2 bg-green-500 text-white rounded-md hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500">
+            Ajouter
+        </button>
+    </div>
+
+    <!-- Liste des notes -->
+    <ul class="space-y-2">
+        <li *ngFor="let note of notes; let i = index"
+            class="flex justify-between items-center p-2 border-b border-gray-200">
+            <!-- Si la note est en cours de modification, afficher un champ d'édition -->
+            <ng-container *ngIf="editingIndex === i; else displayTask">
+                <div class="flex space-x-2">
+                    <input [(ngModel)]="editedNote"
+                        class="p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" />
+                    <button (click)="saveNote()"
+                        class="p-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        Sauvegarder
+                    </button>
+                    <button (click)="cancelEdit()"
+                        class="p-2 bg-red-500 text-white rounded-md hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-500">
+                        Annuler
+                    </button>
+                </div>
+            </ng-container>
+
+            <!-- Sinon, afficher la tâche normale -->
+            <ng-template #displayTask>
+                <span class="text-gray-700">{{ note }}</span>
+                <div class="flex space-x-2">
+                    <button (click)="editNote(i)"
+                        class="p-2 bg-yellow-500 text-white rounded-md hover:bg-yellow-600 focus:outline-none focus:ring-2 focus:ring-yellow-500">
+                        Modifier
+                    </button>
+                    <button (click)="removeNote(i)"
+                        class="p-2 bg-red-500 text-white rounded-md hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-500">
+                        Supprimer
+                    </button>
+                </div>
+            </ng-template>
+        </li>
+    </ul>
+</div>
