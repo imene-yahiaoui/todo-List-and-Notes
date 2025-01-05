@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common'; // Importer CommonModule pour ngFor
 import { FormsModule } from '@angular/forms';
+import {RouterModule} from "@angular/router";
 @Component({
   selector: 'app-to-do-list',
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule,RouterModule],
   templateUrl: './to-do-list.component.html',
 })
 export class ToDoListComponent {
